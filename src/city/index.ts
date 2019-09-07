@@ -1,14 +1,14 @@
-import { harvesterSpawner } from './spawner'
+import { spawners } from './spawners/index'
 import { harvester } from './roles/harvester'
 
 export const city = (spawn: Spawn) => {
-  harvesterSpawner(spawn)
+  // TODO: initialize room (serialize paths, find sources, etc.)
 
-  const creeps = spawn.room.find<Creep>(FIND_MY_CREEPS, {
-    filter: (creep: Creep) => creep.memory.role === 'harvester'
-  })
+  spawners(spawn)
+
+  const creeps = spawn.room.find<Creep>(FIND_MY_CREEPS)
 
   for (const creep of Object.values(creeps)) {
-    harvester(creep, spawn)
+    if (creep.memory.role === 'harvester') harvester(creep, spawn)
   }
 }

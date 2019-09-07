@@ -4,7 +4,7 @@ export const harvester = (creep: Creep, spawn: Spawn) => {
   }
 
   if (creep.carry.energy < creep.carryCapacity) {
-    creep.say(`spawn=${spawn.name} creep=${creep.name} --> harvest`)
+    creep.say(`harvest`)
     const sources = spawn.room.find<Source>(FIND_SOURCES)
 
     if (!sources[0]) {
@@ -22,6 +22,7 @@ export const harvester = (creep: Creep, spawn: Spawn) => {
       })
     }
   } else {
+    creep.say('bringback')
     const err = creep.transfer(spawn, RESOURCE_ENERGY);
 
     if (err === ERR_NOT_IN_RANGE) {
