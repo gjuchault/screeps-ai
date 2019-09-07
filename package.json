@@ -1,0 +1,23 @@
+{
+  "name": "screeps-ai",
+  "version": "0.1.0",
+  "description": "My personal screeps bot",
+  "main": "dist/index.js",
+  "repository": "https://github.com/gjuchault/screeps-ai.git",
+  "author": "Gabriel Juchault <gabriel.juchault@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "rollup": "^1.20.3",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.24.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.6.2"
+  }
+}
